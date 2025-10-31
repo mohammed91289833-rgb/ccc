@@ -51,7 +51,7 @@ const AuthCodeForm = () => {
 
   const startCooldown = () => {
     setIsSubmitDisabled(true);
-    setTimeLeft(60);
+    setTimeLeft(10);
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
